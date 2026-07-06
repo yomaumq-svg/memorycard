@@ -1,0 +1,216 @@
+/*Variable de la paleta de colores*/
+:root {
+    --color-primario: #042e52;
+    --color-acento: #079dad;
+    --color-naranja: #fcf801;
+    --color-texto: #1A1A1A;
+    --color-texto-secundario: #555555;
+    --color-fondo: #EEF4F5;
+    --color-contenedor: #ffffff;
+    --color-subcontenedor: #f7f7f7;
+    --color-texto-claro: #ffffff;
+    --color-borde: #3a3a3a;
+    --fuente-principal: "Inter", sans-serif;
+}
+
+/* Variables para el MODO OSCURO (Reemplazo automático) */
+body.oscuro {
+    --color-fondo: #121212;
+    --color-texto: #f5f5f5;
+    --color-texto-secundario: #b0b0b0;
+    --color-contenedor: #1e1e1e;
+    --color-subcontenedor: #2a2a2a;
+    --color-acento: #00a8cc;
+}
+
+/*RESET BÁSICO*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*ESTILOS GLOBALES*/
+html{
+    font-size: 18px;
+}
+
+body{
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*TIPOGRAFÍA*/
+h1{
+    font-size: 2rem;
+    color: var(--color-texto-claro);
+}
+
+h2{
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+h3{
+    font-size: 1.25rem;
+    color: var(--color-naranja);
+    margin-bottom: 0.5rem;
+}
+
+p{
+    margin-top: 1rem;
+}
+
+/*HEADER*/
+header{
+    background-color: var(--color-primario);
+    padding: 1rem 1.5rem;
+    border-bottom: 4px solid var(--color-naranja);
+}
+
+/*MENU NAVEGACIÓN*/
+nav{
+    margin-top: 0.5rem;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a{
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: var(--color-naranja);
+    text-decoration: underline;
+}
+
+/*MAIN Y SECCIONES*/
+main{
+    padding: 2rem 0;
+}
+
+section{
+    background-color: var(--color-contenedor);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-acento);
+    color: var(--color-texto);
+}
+
+/*ARTICULOS*/
+article{
+    background-color: #f7f7f7;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-naranja);
+}
+
+article p {
+    color: var(--color-texto-secundario);
+}
+
+/*LISTAS*/
+ol, ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+li{
+    margin-bottom: 0.8rem;
+    color: var(--color-texto);
+}
+
+/*ASIDE*/
+aside{
+    background-color: var(--color-contenedor);
+    padding: 1rem;
+    border-left: 5px solid var(--color-naranja);
+    margin-top: 2rem;
+    border-radius: 5px;
+    color: var(--color-texto);
+}
+
+/*IMAGENES*/
+img{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 3px solid var(--color-acento);
+}
+
+/*FOOTER*/
+footer{
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 4px solid var(--color-naranja);
+}
+
+/*Flexbox*/
+.flex-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.flex-card {
+  display: flex;
+  padding: 20px;
+}
+
+/* COMPATIBILIDAD CON COMPONENTES DE BOOTSTRAP */
+body.oscuro .card, 
+body.oscuro .list-group-item,
+body.oscuro .bg-light {
+    background-color: var(--color-contenedor) !important;
+    color: var(--color-texto) !important;
+    border-color: var(--color-borde) !important;
+}
+
+body.oscuro .card-text,
+body.oscuro .text-muted {
+    color: var(--color-texto-secundario) !important;
+}
+
+
+/* Personalización del botón del menú móvil */
+.navbar-toggler {
+    border: 2px solid #f8f9fa; /* Borde blanco sutil */
+    border-radius: 6px;
+    padding: 5px 8px;
+    transition: all 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse o presionar */
+.navbar-toggler:hover, 
+.navbar-toggler:focus {
+    background-color: #f8f9fa;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(248, 249, 250, 0.25);
+}
+
+/* Invierte el icono a negro cuando el fondo del botón se vuelve blanco (hover) */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:focus .navbar-toggler-icon {
+    filter: invert(1);
+}
